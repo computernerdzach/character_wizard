@@ -1,7 +1,6 @@
 from races.gnome import Gnome
 from jobs.barbarian import Barbarian
 from character.character import Character
-from character.abilities import Abilities
 
 race_mapping = {
     'Gnome': Gnome
@@ -14,8 +13,8 @@ job_mapping = {
 def make_character(race=str, job=str, character=str, player=str) -> Character:
     race = race_mapping[race]()
     job = job_mapping[job]()
-    abilities = Abilities()
-    character = Character(race, job, abilities, str(character), str(player))
+    # abilities = Abilities()
+    character = Character(race, job, str(character), str(player))
     return character
 
 
@@ -33,4 +32,4 @@ zach = make_character(choices['race'], choices['job'], choices['character'], cho
 print(f"{zach.p_name} created a {zach.race} {zach.job} named {zach.c_name}. {zach.c_name} has a speed of {zach.speed} "
       f"and a d{zach.hit_die} hit die.")
 
-print(zach.abilities.STR)
+print(zach.STR)

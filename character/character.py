@@ -3,13 +3,14 @@ from jobs.job import Job
 from character.abilities import Abilities
 
 
-class Character:
-    def __init__(self, race: Race, job: Job, abilities: Abilities, c_name: str, p_name: str):
+class Character(Abilities):
+    def __init__(self, race: Race, job: Job, c_name: str, p_name: str):
         self.race = race
         self.job = job
-        self.abilities = abilities
+        self.abilities = Abilities()
         self.c_name = c_name
         self.p_name = p_name
+        Abilities.roll_assign_abilities(self)
 
     def __str__(self):
         return self.c_name
