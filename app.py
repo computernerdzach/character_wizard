@@ -32,4 +32,4 @@ zach = make_character(choices['race'], choices['job'], choices['character'], cho
 print(f"{zach.p_name} created a {zach.race} {zach.job} named {zach.c_name}. {zach.c_name} has a speed of {zach.speed} "
       f"and a d{zach.hit_die} hit die.")
 
-print(zach.STR)
+print(f"{zach.c_name}'s strength score is {zach.STR}, giving them a {zach.modifiers['STR']} modifier.")
