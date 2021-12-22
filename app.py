@@ -22,14 +22,13 @@ def make_character(race: str, job: str, character: str, player: str) -> Characte
 
 def check_for_sub_race(race) -> str:
     if race.sub_races:
-        print('Please select a subrace:')
         for sub_race in race.sub_races:
             print(sub_race)
         sub_race_choice = input('> ')
-        return sub_race_choice
-    else:
-        return race
-
+        if sub_race_choice == 'vanilla':
+            return race.to_string
+        else:
+            return sub_race_choice
 
 def get_selections():
     race_choice = input('Please enter race. >')
