@@ -11,7 +11,7 @@ class Gnome(Race):
         for tongue in Race.languages:
             self.languages.append(tongue)
 
-    sub_races = ('vanilla', 'rock-gnome')
+    sub_races = ('Vanilla', 'Rock-Gnome')
 
     def __str__(self):
         return 'Gnome'
