@@ -11,6 +11,7 @@ class Character(Abilities):
         self.c_name = c_name
         self.p_name = p_name
         Abilities.roll_assign_abilities(self)
+        self.languages = race.languages
 
     def __str__(self):
         return self.c_name
