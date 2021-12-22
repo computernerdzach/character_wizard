@@ -22,6 +22,7 @@ def make_character(race: str, job: str, character: str, player: str) -> Characte
 
 def check_for_sub_race(race) -> str:
     if race.sub_races:
+        print('Please select your sub-race:')
         for sub_race in race.sub_races:
             print(sub_race)
         sub_race_choice = input('> ')
@@ -32,8 +33,8 @@ def check_for_sub_race(race) -> str:
 
 def get_selections():
     race_choice = input('Please enter race. >')
-    job_choice = input('Please enter job. >')
     race_choice = check_for_sub_race(race_mapping[race_choice])
+    job_choice = input('Please enter job. >')
     character_name = input('Please enter your character\'s name. >')
     player_name = input('Please enter your real name. >')
     return {'race': race_choice, 'job': job_choice, 'character': character_name, 'player': player_name}
