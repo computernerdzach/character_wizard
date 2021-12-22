@@ -51,4 +51,4 @@ docs/_build/
 
 # Added by zach
 .idea
-*/__pycache__/
+character/__pycache__/
