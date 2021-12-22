@@ -8,6 +8,14 @@ class Abilities:
     INT = 0
     WIS = 0
     CHA = 0
+    modifiers = {
+        'STR': 0,
+        'DEX': 0,
+        'CON': 0,
+        'INT': 0,
+        'WIS': 0,
+        'CHA': 0
+    }
 
     @staticmethod
     def roll_stats() -> list():
@@ -22,16 +30,17 @@ class Abilities:
             all_rolls.append(stat)
         return all_rolls
 
-    def assign_stats(self, rolls: list()):
+    @staticmethod
+    def assigned_stats(self, rolls: list()) -> dict:
         unused_stats = ['STR', 'DEX', 'CON', 'INT', 'WIS', 'CHA']
         unused_scores = rolls
-        stat_mappings = {
-            'STR': self.STR,
-            'DEX': self.DEX,
-            'CON': self.CON,
-            'INT': self.INT,
-            'WIS': self.WIS,
-            'CHA': self.CON
+        stat_dict = {
+            'STR': 0,
+            'DEX': 0,
+            'CON': 0,
+            'INT': 0,
+            'WIS': 0,
+            'CHA': 0
         }
         while len(unused_scores) > 0:
             print('Unassigned stats:')
@@ -42,30 +51,30 @@ class Abilities:
                 print(j, score)
             stat_answer = input('Stat >')
             score_answer = input('Score >')
-
             stat_selection = unused_stats[int(stat_answer)]
             score_selection = unused_scores[int(score_answer)]
-
-            stat_mappings[stat_selection] = int(score_selection)
-
-            # print(stat_selection)
-            # print(score_selection)
-
+            stat_dict[stat_selection] = int(score_selection)
             unused_stats.remove(unused_stats[int(stat_answer)])
             unused_scores.remove(unused_scores[int(score_answer)])
+        return stat_dict
+
+    def calculate_modifiers(self):
+        self.modifiers['STR'] = (self.STR - 10) // 2
+        self.modifiers['DEX'] = (self.DEX - 10) // 2
+        self.modifiers['CON'] = (self.CON - 10) // 2
+        self.modifiers['WIS'] = (self.WIS - 10) // 2
+        self.modifiers['INT'] = (self.INT - 10) // 2
+        self.modifiers['CHA'] = (self.CHA - 10) // 2
 
     def roll_assign_abilities(self):
         rolls = self.abilities.roll_stats()
-        self.abilities.assign_stats(rolls)
+        assigned_stats = self.abilities.assigned_stats(self, rolls)
+        self.STR = assigned_stats['STR']
+        self.DEX = assigned_stats['DEX']
+        self.CON = assigned_stats['CON']
+        self.WIS = assigned_stats['WIS']
+        self.INT = assigned_stats['INT']
+        self.CHA = assigned_stats['CHA']
+        self.calculate_modifiers()
 
-    # my_stats = roll_stats()
-    # assign_stats(my_stats)
 
-    modifiers = {
-        'str': STR / 2,
-        'dex': DEX / 2,
-        'con': CON / 2,
-        'int': INT / 2,
-        'wis': WIS / 2,
-        'cha': CHA / 2
-    }
