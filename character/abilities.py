@@ -32,15 +32,15 @@ class Abilities:
 
     @staticmethod
     def assigned_stats(self, rolls: list()) -> dict:
-        unused_stats = ['STR', 'DEX', 'CON', 'INT', 'WIS', 'CHA']
+        unused_stats = ['str', 'dex', 'con', 'int', 'wis', 'cha']
         unused_scores = rolls
         stat_dict = {
-            'STR': 0,
-            'DEX': 0,
-            'CON': 0,
-            'INT': 0,
-            'WIS': 0,
-            'CHA': 0
+            'str': 0,
+            'dex': 0,
+            'con': 0,
+            'int': 0,
+            'wis': 0,
+            'cha': 0
         }
         while len(unused_scores) > 0:
             print('Unassigned stats:')
@@ -70,12 +70,12 @@ class Abilities:
     def roll_assign_abilities(self):
         rolls = self.roll_stats()
         assigned_stats = self.assigned_stats(self, rolls)
-        self.STR = assigned_stats['STR']
-        self.DEX = assigned_stats['DEX']
-        self.CON = assigned_stats['CON']
-        self.WIS = assigned_stats['WIS']
-        self.INT = assigned_stats['INT']
-        self.CHA = assigned_stats['CHA']
+        self.STR = assigned_stats['str']
+        self.DEX = assigned_stats['dex']
+        self.CON = assigned_stats['con']
+        self.WIS = assigned_stats['wis']
+        self.INT = assigned_stats['int']
+        self.CHA = assigned_stats['cha']
         self.calculate_modifiers()
 
 
