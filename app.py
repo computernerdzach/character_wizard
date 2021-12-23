@@ -28,7 +28,27 @@ if __name__ == '__main__':
     job = job_mapping[args.job]()
 
     character = Character(race, job, args.player_name, args.character_name)
+
+    abilities_dict = {
+        'str': character.abilities.STR,
+        'dex': character.abilities.DEX,
+        'int': character.abilities.INT,
+        'wis': character.abilities.WIS,
+        'con': character.abilities.CON,
+        'cha': character.abilities.CHA
+    }
+
     print(f'{character.p_name} made a {character.race} {character.job}.')
+    print('Ability / Score / Modifier')
+    for key in abilities_dict:
+
+        name = str(key.upper())
+        score = str(abilities_dict[key])
+        modifier = str(character.abilities.modifiers[key])
+        print(key.upper() + ' ' * (8-len(key)) + '/ ' + score + ' ' * (6-len(score)) + '/ ' + modifier)
+
+        # print(({key.upper() + (' '*(8-len(key)))) + ': ' + {abilities_dict[key]} + ", " + character.abilities.modifiers[key]))
+
 
 
 
