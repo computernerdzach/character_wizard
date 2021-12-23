@@ -4,6 +4,7 @@ from races.gnome import Gnome
 from races.sub_races.rock_gnome import RockGnome
 from jobs.barbarian import Barbarian
 from character.character import Character
+from character.abilities import Abilities
 
 available_races = ['gnome', 'rock-gnome']
 available_classes = ['barbarian']
@@ -44,8 +45,8 @@ if __name__ == '__main__':
 
         name = str(key.upper())
         score = str(abilities_dict[key])
-        modifier = str(character.abilities.modifiers[key])
-        print(key.upper() + ' ' * (8-len(key)) + '/ ' + score + ' ' * (6-len(score)) + '/ ' + modifier)
+        modifier = str(character.modifiers[key])
+        print(name + ' ' * (8-len(key)) + '/ ' + score + ' ' * (6-len(score)) + '/ ' + modifier)
 
         # print(({key.upper() + (' '*(8-len(key)))) + ': ' + {abilities_dict[key]} + ", " + character.abilities.modifiers[key]))
 
