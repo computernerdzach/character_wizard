@@ -12,6 +12,5 @@ class Race:
     def __str__(self):
         return NotImplemented
 
-    @property
     def to_string(self):
         return self.__str__()
