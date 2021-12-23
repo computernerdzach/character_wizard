@@ -9,12 +9,12 @@ class Abilities:
     WIS = 0
     CHA = 0
     modifiers = {
-        'STR': 0,
-        'DEX': 0,
-        'CON': 0,
-        'INT': 0,
-        'WIS': 0,
-        'CHA': 0
+        'str': 0,
+        'dex': 0,
+        'con': 0,
+        'int': 0,
+        'wis': 0,
+        'cha': 0
     }
 
     @staticmethod
