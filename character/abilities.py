@@ -59,16 +59,17 @@ class Abilities:
         return stat_dict
 
     def calculate_modifiers(self):
-        self.modifiers['STR'] = (self.STR - 10) // 2
-        self.modifiers['DEX'] = (self.DEX - 10) // 2
-        self.modifiers['CON'] = (self.CON - 10) // 2
-        self.modifiers['WIS'] = (self.WIS - 10) // 2
-        self.modifiers['INT'] = (self.INT - 10) // 2
-        self.modifiers['CHA'] = (self.CHA - 10) // 2
+        self.modifiers['str'] = (self.STR - 10) // 2
+        self.modifiers['dex'] = (self.DEX - 10) // 2
+        self.modifiers['con'] = (self.CON - 10) // 2
+        self.modifiers['wis'] = (self.WIS - 10) // 2
+        self.modifiers['int'] = (self.INT - 10) // 2
+        self.modifiers['cha'] = (self.CHA - 10) // 2
+        return self.modifiers
 
     def roll_assign_abilities(self):
-        rolls = self.abilities.roll_stats()
-        assigned_stats = self.abilities.assigned_stats(self, rolls)
+        rolls = self.roll_stats()
+        assigned_stats = self.assigned_stats(self, rolls)
         self.STR = assigned_stats['STR']
         self.DEX = assigned_stats['DEX']
         self.CON = assigned_stats['CON']
