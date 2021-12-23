@@ -1,14 +1,49 @@
+from argparse import ArgumentParser
+
 from races.gnome import Gnome
 from races.sub_races.rock_gnome import RockGnome
 from jobs.barbarian import Barbarian
 from character.character import Character
 
+available_races = ['gnome', 'rock-gnome']
+available_classes = ['barbarian']
+
+race_mapping = {
+    'gnome': Gnome,
+    'rock-gnome': RockGnome
+}
+job_mapping = {
+    'barbarian': Barbarian
+}
+
+if __name__ == '__main__':
+    parser = ArgumentParser()
+    parser.add_argument("--race", choices=available_races, required=True)
+    parser.add_argument("--job", choices=available_classes, required=True)
+    parser.add_argument("--player-name", default='Player')
+    parser.add_argument("--character-name", default='Character')
+    args = parser.parse_args()
+
+    race = race_mapping[args.race]()
+    job = job_mapping[args.job]()
+
+    character = Character(race, job, args.player_name, args.character_name)
+    print(f'{character.p_name} made a {character.race} {character.job}.')
+
+
+
+
+
+"""
 race_mapping = {
     'Gnome': Gnome,
     'Rock-Gnome': RockGnome
 }
 job_mapping = {
     'Barbarian': Barbarian
+}
+races_with_subraces = {
+    'Gnome': ['Rock-Gnome', 'Deep-Gnome']
 }
 
 
@@ -26,10 +61,12 @@ def check_for_sub_race(race) -> str:
         for sub_race in race.sub_races:
             print(sub_race)
         sub_race_choice = input('> ')
-        if sub_race_choice == 'vanilla':
-            return race.to_string
+        if sub_race_choice == 'Vanilla':
+            x = race.to_string()
+            return x
         else:
             return sub_race_choice
+
 
 def get_selections():
     race_choice = input('Please enter race. >')
@@ -52,3 +89,4 @@ print(f"{zach.c_name}'s strength score is {zach.STR}, giving them a {zach.modifi
 print(f"{zach.c_name} speaks the following languages:")
 for tongue in zach.languages:
     print(tongue)
+"""
