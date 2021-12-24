@@ -4,7 +4,6 @@ from races.gnome import Gnome
 from races.sub_races.rock_gnome import RockGnome
 from jobs.barbarian import Barbarian
 from character.character import Character
-from character.abilities import Abilities
 
 available_races = ['gnome', 'rock-gnome']
 available_classes = ['barbarian']
@@ -30,27 +29,18 @@ if __name__ == '__main__':
 
     character = Character(race, job, args.player_name, args.character_name, test=True)
 
-    # abilities_dict = {
-    #     'str': character.abilities.STR,
-    #     'dex': character.abilities.DEX,
-    #     'int': character.abilities.INT,
-    #     'wis': character.abilities.WIS,
-    #     'con': character.abilities.CON,
-    #     'cha': character.abilities.CHA
-    # }
+    abilities_dict = {
+        'str': character.str,
+        'dex': character.dex,
+        'int': character.int,
+        'wis': character.wis,
+        'con': character.con,
+        'cha': character.cha
+    }
 
     print(f'{character.p_name} made a {character.race} {character.job}.')
-    print(f'{character.abilities.abilities}')
-    # print('Ability / Score / Modifier')
-    # for key in abilities_dict:
-    #
-    #     name = str(key.upper())
-    #     score = str(abilities_dict[key])
-    #     modifier = str(character.modifiers[key])
-    #     print(name + ' ' * (8-len(key)) + '/ ' + score + ' ' * (6-len(score)) + '/ ' + modifier)
-
-        # print(({key.upper() + (' '*(8-len(key)))) + ': ' + {abilities_dict[key]} + ", " + character.abilities.modifiers[key]))
-
+    print(f'{character.str.score}: {character.str.modifier}')
+    character.display_scores()
 
 
 
