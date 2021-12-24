@@ -1,7 +1,7 @@
 import json
-from character.Ability import Ability
-from races.race import Race
-from jobs.job import Job
+from Ability import Ability
+from races.Race import Race
+from jobs.Job import Job
 
 
 class Character:
@@ -20,6 +20,7 @@ class Character:
         self.c_name = c_name
         self.p_name = p_name
         self.languages = race.languages
+        self.add_bonuses()
 
     def __str__(self):
         return self.c_name
@@ -37,6 +38,11 @@ class Character:
             score = getattr(self, ability).score
             modifier = getattr(self, ability).modifier
             print("{: >7} / {:>6}/ {:>8}".format(ability.upper(), score, modifier))
+
+    def add_bonuses(self):
+        for key, value in self.race.racial_bonuses.items():
+            ability = getattr(self, key)
+            ability.score += value
 
     @property
     def speed(self):

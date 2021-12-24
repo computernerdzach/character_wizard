@@ -1,9 +1,10 @@
-from races.gnome import Gnome
+from races.Gnome import Gnome
 
 
 class RockGnome(Gnome):
     def __init__(self):
-        self.racial_bonuses['CON'] = 1
+        super().__init__()
+        self.racial_bonuses['con'] = 1
 
     def __str__(self):
         return 'Rock-Gnome'

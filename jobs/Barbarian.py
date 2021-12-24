@@ -1,4 +1,4 @@
-from jobs.job import Job
+from jobs.Job import Job
 
 
 class Barbarian(Job):

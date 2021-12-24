@@ -1,4 +1,4 @@
-from races.race import Race
+from races.Race import Race
 
 
 class Gnome(Race):
@@ -6,7 +6,7 @@ class Gnome(Race):
 
     def __init__(self):
         self.speed = 25
-        self.racial_bonuses = {'INT': 2}
+        self.racial_bonuses['int'] = 2
         self.size = 'small'
         self.languages = ['gnomish']
         self.traits.append('darkvision')

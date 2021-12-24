@@ -1,9 +1,9 @@
 from argparse import ArgumentParser
 
-from races.gnome import Gnome
-from races.sub_races.rock_gnome import RockGnome
-from jobs.barbarian import Barbarian
-from character.character import Character
+from races.Gnome import Gnome
+from races.sub_races.RockGnome import RockGnome
+from jobs.Barbarian import Barbarian
+from Character import Character
 
 available_races = ['gnome', 'rock-gnome']
 available_classes = ['barbarian']
