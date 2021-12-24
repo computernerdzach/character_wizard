@@ -7,9 +7,9 @@ class Character:
     def __init__(self, race: Race, job: Job, c_name: str, p_name: str):
         self.race = race
         self.job = job
-        self.abilities = Abilities()
-        self.abilities.roll_assign_abilities()
-        self.modifiers = self.abilities.calculate_modifiers()
+        # self.abilities = Abilities()
+        # self.abilities.roll_assign_abilities()
+        # self.modifiers = self.abilities.calculate_modifiers()
         self.c_name = c_name
         self.p_name = p_name
         self.languages = race.languages
