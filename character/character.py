@@ -1,20 +1,22 @@
 import json
-
+from character.Ability import Ability
 from races.race import Race
 from jobs.job import Job
-from character.abilities import Abilities
 
 
 class Character:
     def __init__(self, race: Race, job: Job, c_name: str, p_name: str, test: bool = False):
         self.race = race
         self.job = job
-        scores = dict()
+        self.str = Ability()
+        self.dex = Ability()
+        self.con = Ability()
+        self.int = Ability()
+        self.wis = Ability()
+        self.cha = Ability()
+
         if test:
-            scores = self.load_test_data()
-        self.abilities = Abilities(**scores)
-        # self.abilities.roll_assign_abilities()
-        # self.modifiers = self.abilities.calculate_modifiers()
+            self.load_test_data()
         self.c_name = c_name
         self.p_name = p_name
         self.languages = race.languages
@@ -22,10 +24,19 @@ class Character:
     def __str__(self):
         return self.c_name
 
-    @staticmethod
-    def load_test_data():
+    def load_test_data(self):
         with open("test_data/ability_scores.json", "r") as f:
-            return json.load(f)
+            data = json.load(f)
+            for key, value in data.items():
+                attr = getattr(self, key)
+                attr.update(value)
+
+    def display_scores(self):
+        print('Ability / Score / Modifier')
+        for ability in ['str', 'dex', 'con', 'int', 'wis', 'cha']:
+            score = getattr(self, ability).score
+            modifier = getattr(self, ability).modifier
+            print("{: >7} / {:>6}/ {:>8}".format(ability.upper(), score, modifier))
 
     @property
     def speed(self):
