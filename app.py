@@ -28,7 +28,7 @@ if __name__ == '__main__':
     race = race_mapping[args.race]()
     job = job_mapping[args.job]()
 
-    character = Character(race, job, args.player_name, args.character_name)
+    character = Character(race, job, args.player_name, args.character_name, test=True)
 
     # abilities_dict = {
     #     'str': character.abilities.STR,
@@ -40,6 +40,7 @@ if __name__ == '__main__':
     # }
 
     print(f'{character.p_name} made a {character.race} {character.job}.')
+    print(f'{character.abilities.abilities}')
     # print('Ability / Score / Modifier')
     # for key in abilities_dict:
     #

@@ -2,13 +2,7 @@ from random import randint
 
 
 class Abilities:
-    STR = 0
-    DEX = 0
-    CON = 0
-    INT = 0
-    WIS = 0
-    CHA = 0
-    modifiers = {
+    abilities = {
         'str': 0,
         'dex': 0,
         'con': 0,
@@ -16,9 +10,27 @@ class Abilities:
         'wis': 0,
         'cha': 0
     }
+    # modifiers = {
+    #     'str': 0,
+    #     'dex': 0,
+    #     'con': 0,
+    #     'int': 0,
+    #     'wis': 0,
+    #     'cha': 0
+    # }
+
+    def __init__(self, **kwargs):
+        # TODO add validation
+        self.abilities.update(kwargs)
+
+
+
+    # @staticmethod
+    # def update_ability():
+
 
     @staticmethod
-    def roll_stats() -> list():
+    def roll_stats() -> list:
         all_rolls = list()
         for stat in range(6):
             rolls = list()
@@ -31,7 +43,7 @@ class Abilities:
         return all_rolls
 
     @staticmethod
-    def assigned_stats(self, rolls: list()) -> dict:
+    def assigned_stats(self, rolls: list) -> dict:
         unused_stats = ['str', 'dex', 'con', 'int', 'wis', 'cha']
         unused_scores = rolls
         stat_dict = {
