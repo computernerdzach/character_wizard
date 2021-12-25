@@ -2,7 +2,7 @@ from races.Race import Race
 
 
 class Gnome(Race):
-    sub_races = ['Vanilla', 'Rock-Gnome']
+    sub_races = ['Vanilla', 'rock-gnome']
 
     def __init__(self):
         self.speed = 25

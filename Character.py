@@ -28,9 +28,8 @@ class Character:
         return self.c_name
 
     def calculate_raw_armor_class(self):
-        self.armor_class = 10
         self.armor_class += self.dex.modifier
-        if self.job.__str__() == 'Barbarian':
+        if self.job.__str__() == 'barbarian':
             self.armor_class += self.con.modifier
 
     def load_test_data(self):
@@ -46,6 +45,8 @@ class Character:
             score = getattr(self, ability).score
             modifier = getattr(self, ability).modifier
             print("{: >7} / {:>5} / {:>8}".format(ability.upper(), score, modifier))
+
+    # def display_languages(self):
 
     def add_bonuses(self):
         for key, value in self.race.racial_bonuses.items():

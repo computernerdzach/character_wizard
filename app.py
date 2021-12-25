@@ -38,7 +38,7 @@ if __name__ == '__main__':
         'cha': character.cha
     }
 
-    print(f'{character.p_name} made a {character.race} {character.job} named {character.c_name}.')
+    print(f'{character.p_name} made a {str(character.race).title()} {str(character.job).title()} named {character.c_name}.')
     character.display_scores()
     print(f'Armor Class: {character.armor_class}')
     print(f'{character.c_name} knows the following languages: {character.languages}')
@@ -50,13 +50,13 @@ if __name__ == '__main__':
 """
 race_mapping = {
     'Gnome': Gnome,
-    'Rock-Gnome': RockGnome
+    'rock-gnome': RockGnome
 }
 job_mapping = {
     'Barbarian': Barbarian
 }
 races_with_subraces = {
-    'Gnome': ['Rock-Gnome', 'Deep-Gnome']
+    'Gnome': ['rock-gnome', 'Deep-Gnome']
 }
 
 
