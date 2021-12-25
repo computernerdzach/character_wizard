@@ -37,7 +37,7 @@ class Character:
         for ability in ['str', 'dex', 'con', 'int', 'wis', 'cha']:
             score = getattr(self, ability).score
             modifier = getattr(self, ability).modifier
-            print("{: >7} / {:>6}/ {:>8}".format(ability.upper(), score, modifier))
+            print("{: >7} / {:>5} / {:>8}".format(ability.upper(), score, modifier))
 
     def add_bonuses(self):
         for key, value in self.race.racial_bonuses.items():

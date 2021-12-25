@@ -39,7 +39,6 @@ if __name__ == '__main__':
     }
 
     print(f'{character.p_name} made a {character.race} {character.job}.')
-    print(f'{character.str.score}: {character.str.modifier}')
     character.display_scores()
 
 
