@@ -1,15 +1,9 @@
-import importlib
 from argparse import ArgumentParser
 
 from Character import Character
 from jobs.Job import Job
 from races.Race import Race
-
-
-def str_to_class(package, class_name):
-    module = importlib.import_module(f'{package}.{class_name}')
-    return getattr(module, class_name)
-
+from util import str_to_class
 
 if __name__ == '__main__':
     parser = ArgumentParser()
@@ -23,7 +17,4 @@ if __name__ == '__main__':
     job = str_to_class('jobs', args.job)()
 
     character = Character(race, job, args.character_name, args.player_name, test=True)
-    print(f'{character.p_name} made a {str(character.race).title()} {str(character.job).title()} named {character.c_name}.')
-    character.display_scores()
-    print(f'Armor Class: {character.armor_class}')
-    print(f'{character.c_name} knows the following languages: {character.languages}')
+    print(character.details)

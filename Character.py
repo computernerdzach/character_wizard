@@ -46,6 +46,15 @@ class Character:
             modifier = getattr(self, ability).modifier
             print("{: >7} / {:>5} / {:>8}".format(ability.upper(), score, modifier))
 
+    @property
+    def details(self):
+        return f"""
+        {self.p_name} made a {str(self.race).title()} {str(self.job).title()} named {self.c_name}.
+        {self.display_scores()}
+        Armor Class: {self.armor_class}
+        {self.c_name} knows the following languages: {self.languages}
+        """
+
     # def display_languages(self):
 
     def add_bonuses(self):
