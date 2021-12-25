@@ -40,6 +40,7 @@ if __name__ == '__main__':
 
     print(f'{character.p_name} made a {character.race} {character.job}.')
     character.display_scores()
+    print(f'Armor Class: {character.armor_class}')
 
 
 

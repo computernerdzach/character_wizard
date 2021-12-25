@@ -14,6 +14,7 @@ class Character:
         self.int = Ability()
         self.wis = Ability()
         self.cha = Ability()
+        self.armor_class = 10
 
         if test:
             self.load_test_data()
@@ -21,9 +22,16 @@ class Character:
         self.p_name = p_name
         self.languages = race.languages
         self.add_bonuses()
+        self.calculate_raw_armor_class()
 
     def __str__(self):
         return self.c_name
+
+    def calculate_raw_armor_class(self):
+        self.armor_class = 10
+        self.armor_class += self.dex.modifier
+        if self.job.__str__() == 'Barbarian':
+            self.armor_class += self.con.modifier
 
     def load_test_data(self):
         with open("test_data/ability_scores.json", "r") as f:
