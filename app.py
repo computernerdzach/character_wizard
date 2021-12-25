@@ -27,7 +27,7 @@ if __name__ == '__main__':
     race = race_mapping[args.race]()
     job = job_mapping[args.job]()
 
-    character = Character(race, job, args.player_name, args.character_name, test=True)
+    character = Character(race, job, args.character_name, args.player_name, test=True)
 
     abilities_dict = {
         'str': character.str,
@@ -38,9 +38,10 @@ if __name__ == '__main__':
         'cha': character.cha
     }
 
-    print(f'{character.p_name} made a {character.race} {character.job}.')
+    print(f'{character.p_name} made a {character.race} {character.job} named {character.c_name}.')
     character.display_scores()
     print(f'Armor Class: {character.armor_class}')
+    print(f'{character.c_name} knows the following languages: {character.languages}')
 
 
 
