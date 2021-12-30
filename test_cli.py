@@ -17,4 +17,4 @@ if __name__ == '__main__':
     job = str_to_class('jobs', args.job)()
 
     character = Character(race, job, args.character_name, args.player_name, test=True)
-    print(character.details)
+    character.details()
