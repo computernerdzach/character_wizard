@@ -54,6 +54,10 @@ class Character:
         print(f'{self.c_name} has the following traits:')
         for trait in self.race.traits:
             print(trait)
+        print()
+        print('And they are proficient at the following saving throws:')
+        for ability in self.job.saving_throw_proficiencies:
+            print(f'- {ability}')
 
     def add_bonuses(self):
         for key, value in self.race.racial_bonuses.items():
