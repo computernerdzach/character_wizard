@@ -4,7 +4,7 @@ from abc import abstractmethod
 class Race:
     AVAILABLE = ['Gnome', 'RockGnome', 'Dragonborn', 'Dwarf', 'HillDwarf',
                  'Elf', 'HighElf', 'HalfElf', 'HalfOrc', 'Halfling',
-                 'LightfootHalfling', 'Human']
+                 'LightfootHalfling', 'Human', 'Tiefling']
     speed = 30
     size = 'medium'
     languages = ['common']
