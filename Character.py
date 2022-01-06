@@ -51,6 +51,9 @@ class Character:
         self.display_scores()
         print(f'Armor Class: {self.armor_class}')
         print(f'{self.c_name} knows the following languages: {self.languages}')
+        print(f'{self.c_name} has the following traits:')
+        for trait in self.race.traits:
+            print(trait)
 
     def add_bonuses(self):
         for key, value in self.race.racial_bonuses.items():
