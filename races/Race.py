@@ -2,7 +2,7 @@ from abc import abstractmethod
 
 
 class Race:
-    AVAILABLE = ['Gnome', 'RockGnome']
+    AVAILABLE = ['Gnome', 'RockGnome', 'Dragonborn']
     speed = 30
     size = 'medium'
     languages = ['common']
