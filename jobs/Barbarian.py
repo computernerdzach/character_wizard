@@ -6,4 +6,4 @@ class Barbarian(Job):
     saving_throw_proficiencies = ('str', 'con')
 
     def __str__(self):
-        return 'barbarian'
+        return 'Barbarian'

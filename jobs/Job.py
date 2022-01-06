@@ -1,3 +1,3 @@
 class Job:
-    AVAILABLE = ['Barbarian']
+    AVAILABLE = ['Barbarian', 'Bard']
     hit_die = 6
