@@ -3,7 +3,7 @@ from abc import abstractmethod
 
 class Race:
     AVAILABLE = ['Gnome', 'RockGnome', 'Dragonborn', 'Dwarf', 'HillDwarf',
-                 'Elf', 'HighElf']
+                 'Elf', 'HighElf', 'HalfElf']
     speed = 30
     size = 'medium'
     languages = ['common']

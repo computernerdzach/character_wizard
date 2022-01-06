@@ -8,4 +8,4 @@ class HillDwarf(Dwarf):
         self.traits.append('dwarven-toughness')
 
     def __str__(self):
-        return 'hill dwarf'
+        return 'Hill Dwarf'

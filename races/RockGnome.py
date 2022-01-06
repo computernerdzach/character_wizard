@@ -7,4 +7,4 @@ class RockGnome(Gnome):
         self.racial_bonuses['con'] = 1
 
     def __str__(self):
-        return 'rock gnome'
+        return 'Rock Gnome'

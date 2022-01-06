@@ -10,4 +10,4 @@ class HighElf(Elf):
         self.traits.append('extra-language')
 
     def __str__(self):
-        return 'high elf'
+        return 'High Elf'
